@@ -18,11 +18,14 @@ public class Test1 {
         /*try {
             session = factory.getCurrentSession();
 
-            Department department = new Department("IT", 300, 1200);
-            Employee employee = new Employee("Misha", "Pushkin", 467);
-            Employee employee1 = new Employee("Vanya", "Kukushkin", 800);
+            Department department = new Department("Sales", 250, 1000);
+            Employee employee = new Employee("Misha", "Pushkin", 400);
+            Employee employee1 = new Employee("Vanya", "Kukushkin", 450);
+            Employee employee2 = new Employee("Katya", "Kulian", 800);
             department.addEmployeeToDepartment(employee);
             department.addEmployeeToDepartment(employee1);
+            department.addEmployeeToDepartment(employee2);
+
 
 
             session.beginTransaction();
@@ -37,23 +40,29 @@ public class Test1 {
             factory.close();
         }*/
 
-        /*try {
+        try {
             session = factory.getCurrentSession();
 
 
 
             session.beginTransaction();
 
-            Department department = session.get(Department.class, 1);
+            System.out.println("Get dep");
+            Department department = session.get(Department.class, 4);
+            System.out.println("Show dep");
             System.out.println(department);
-            System.out.println(department.getEmployees());
+
+            department.getEmployees().get(0);
 
             session.getTransaction().commit();
+
+            System.out.println("Show emp");
+            System.out.println(department.getEmployees());
 
         } finally {
             session.close();
             factory.close();
-        }*/
+        }
 
         /*try {
             session = factory.getCurrentSession();
@@ -73,7 +82,7 @@ public class Test1 {
             factory.close();
         }*/
 
-        try {
+        /*try {
             session = factory.getCurrentSession();
 
 
@@ -88,7 +97,6 @@ public class Test1 {
         } finally {
             session.close();
             factory.close();
-        }
-
+        }*/
     }
 }
